@@ -14,7 +14,7 @@ public class Ejercicio2 {
                 k++;
             }
             while (valor <= n) {
-                System.out.print(valor + " ");
+                System.out.print("0"+valor +" ");
                 valor++;
             }
             System.out.println(" ");
