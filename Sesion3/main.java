@@ -4,6 +4,6 @@ public class main {
 
     public static void main(String[] args) {
         inst_person.inPutDataUser();
-        inst_Animal.inPutDataUser();
+        inst_Animal.showInformation();
     }
 }
