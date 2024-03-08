@@ -5,7 +5,7 @@ public String name_Animal = "";
 public String originPlace_Animal = "";
 public String species_Animal = "";
 
-    public void inPutDataUser (){
+    public void showInformation(){
         System.out.println("Enter animal name");
         name_Animal = sc.nextLine();
         System.out.println("Enter animal origin place");
