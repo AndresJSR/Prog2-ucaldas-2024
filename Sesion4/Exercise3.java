@@ -1,4 +1,4 @@
-/*import java.util.LinkedList;
+import java.util.LinkedList;
 import java.util.Scanner;
 public class Exercise3 {
     public static void main(String[] args) {
@@ -18,4 +18,3 @@ public class Exercise3 {
     }
 
 }
-*/
