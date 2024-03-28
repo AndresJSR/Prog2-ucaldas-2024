@@ -1,0 +1,5 @@
+Luis,9992,Matematicas,5.0
+Raquel,1120,Lenguas,2.0
+Monica,4327,Sociologia,5.0
+Juan,2001,Lenguas,4.3
+Manuel,1704,Administracion,4.5
