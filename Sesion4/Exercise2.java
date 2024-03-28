@@ -4,8 +4,7 @@ import java.util.Scanner;
 public class Exercise2 {
     public static void showExercise2() {
         // Your code here!
-        ArrayList<String> cadenas;
-        cadenas = new ArrayList();
+        ArrayList<String> cadenas = new ArrayList<String>();
         Scanner Sc = new Scanner(System.in);
         System.out.println("Ingrese un elemento");
         String elemento = Sc.next();
