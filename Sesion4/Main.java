@@ -5,9 +5,9 @@ public class Main {
    static ListaTareas inst_ListaTareas = new ListaTareas();
 
    public static void main(String[] args) {
-       instExercise1.showExercise1();
-       instExercise2.showExercise2();
-       inst_agenda.inPutData();
+   //    instExercise1.showExercise1();
+   //    instExercise2.showExercise2();
+   //    inst_agenda.inPutData();
       inst_ListaTareas.inPutDataList();
    }
 

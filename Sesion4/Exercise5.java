@@ -14,7 +14,8 @@ public class Exercise5 {
     public String persona_encargada;
     public String estado;
 
-    public Exercise5(String nombre_tarea_param, Integer duracionHoras_param, Integer duracionMin_param, String persona_encargada_param, String estado_param) {
+    public Exercise5(String nombre_tarea_param, Integer duracionHoras_param, Integer duracionMin_param,
+            String persona_encargada_param, String estado_param) {
         this.nombre_tarea = nombre_tarea_param;
         this.duracionHoras = duracionHoras_param;
         this.duracionMin = duracionMin_param;
@@ -44,6 +45,7 @@ public class Exercise5 {
     public void setduracionHoras(Integer duracionHoras) {
         this.duracionHoras = duracionHoras;
     }
+
     public Integer getduracion() {
         return duracionMin;
     }
@@ -51,6 +53,7 @@ public class Exercise5 {
     public void setduracionMin(Integer duracionMin) {
         this.duracionMin = duracionMin;
     }
+
     public String getpersona_encargada() {
         return persona_encargada;
     }
@@ -58,10 +61,12 @@ public class Exercise5 {
     public void setpersona_encargada(String persona_encargada) {
         this.persona_encargada = persona_encargada;
     }
-    public String getestado (){
+
+    public String getestado() {
         return estado;
     }
-    public void setestado(String estado){
+
+    public void setestado(String estado) {
         this.estado = estado;
     }
 }
