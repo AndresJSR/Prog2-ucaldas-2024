@@ -49,10 +49,8 @@ public class RegistroInventario {
                     listarProveedores();
                     break;
                 case 4:
-                    //EN EL CASO DE QUE SE REGISTRE UNA VENTA DE 2 UNIDADES Y HAYAN 2 UNIDADES SE CREA UN BUCLE INFINITO    
                     registrarVenta(crearVenta());
                     listarVentas();
-                    ;
                     break;
                 case 5:
                     System.out.println("Seleccione una opción de busqueda");
@@ -65,7 +63,7 @@ public class RegistroInventario {
                         case 1:
                             System.out.println("Nombre del producto");
                             String nombreFiltro = sc.next();
-                            System.out.println(buscarProductos(nombreFiltro)); 
+                            System.out.println(buscarProductos(nombreFiltro));
                             break;
                         case 2:
                             System.out.println("Categoría del producto");
@@ -89,9 +87,10 @@ public class RegistroInventario {
 
     }
 
-    /* CREACION DE OBJETOS (PRODUCTO - CATEGORIA - PROVEEDOR - VENTA) CON SUS
-     RESPECTIVOS REGISTROS.
-    */
+    /*
+     * CREACION DE OBJETOS (PRODUCTO - CATEGORIA - PROVEEDOR - VENTA) CON SUS
+     * RESPECTIVOS REGISTROS.
+     */
 
     // SE CREA REGISTRO DEL PRODUCTO
     public static void registrarProducto(Producto producto) {
@@ -188,7 +187,7 @@ public class RegistroInventario {
         int mes = sc.nextInt();
         System.out.println("Ingrese el día");
         int dia = sc.nextInt();
-        return new Venta(producto, unidades, new Date(año-1900, mes - 1, dia));
+        return new Venta(producto, unidades, new Date(año - 1900, mes - 1, dia));
     }
 
     public static void listarProductos() {
@@ -217,7 +216,7 @@ public class RegistroInventario {
         if (!proveedores.isEmpty()) {
             System.out.println("Productos de la lista");
             for (Proveedor prov : proveedores) {
-                System.out.println(prov.getNombreProv()+prov.getTelefonoProv()+prov.getDireccionProv());
+                System.out.println(prov.getNombreProv() + prov.getTelefonoProv() + prov.getDireccionProv());
             }
         } else {
             System.out.println("No existen productos en la lista");
