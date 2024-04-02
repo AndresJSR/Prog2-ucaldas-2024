@@ -75,7 +75,7 @@ public class RegistroEstudiantes {
 
     public static void eliminarEstudiante() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese el código del estudiante por eliminar");
+        System.out.println("Ingrese el código del estudiante por eliminar ");
         String codigoEstEliminar = sc.next();
         if (!codigoEstEliminar.equals(null)) {
             for (int i = 0; i < estudiantes.size(); i++) {
@@ -83,10 +83,10 @@ public class RegistroEstudiantes {
                     estudiantes.remove(i);
                 }
             }
-            System.out.println("Se ha eliminado al estudiante");
+            System.out.println("Se ha eliminado al estudiante ");
 
         } else {
-            System.out.println("No existen estudiantes en la lista");
+            System.out.println("No existen estudiantes en la lista ");
         }
     }
 
