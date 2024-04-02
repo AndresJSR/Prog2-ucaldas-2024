@@ -1,7 +1,10 @@
 public class Categoria {
     String nombreCategoria = "";
     String descripcionCategoria  = "";
-    public Categoria (String nombreCategoria , String descripcionCategoria ){
+   
+    public Categoria(String nombreCategoria, String descripcionCategoria) {
+        this.nombreCategoria = nombreCategoria;
+        this.descripcionCategoria = descripcionCategoria;
     }
     public String getNombreCategoria() {
         return nombreCategoria;
@@ -16,10 +19,7 @@ public class Categoria {
         this.descripcionCategoria = descripcionCategoria;
     }
     @Override
-    public String toString(){
-        return "Categoria [nombreCategoria= + " + nombreCategoria + ", descripcionCategoria " + descripcionCategoria +"]";
-    }
-    public String geString(){
-        return toString();
+    public String toString() {
+        return "" + nombreCategoria + ", descripcionCategoria=" + descripcionCategoria + "";
     }
 }

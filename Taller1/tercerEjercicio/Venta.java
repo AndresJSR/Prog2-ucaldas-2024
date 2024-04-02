@@ -1,7 +1,7 @@
 import java.sql.Date;
 
 public class Venta {
-    Producto producto = new Producto(null, null, 0, 0);
+    Producto producto;
     int cantidad;
     Date fechaVenta; 
 
