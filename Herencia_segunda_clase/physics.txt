@@ -1,0 +1,5 @@
+MecánicaCuántica,5,Robert,1112222,albert@example.com
+TeoríaDeCuerdas,4.5,Marie,3334444,marie@example.org
+Cosmología,5,Lucas,5556666,isaac@example.com
+FísicaNuclear,6,Manolo,7778888,richard@example.org
+FísicaEstadística,4.5,Stephen,9990000,stephen@example.com

@@ -1,0 +1,5 @@
+ÁlgebraAbstracta,5,Leopoldo,1112222,leopoldo@example.com
+GeometríaDiferencial,4,Manuel,3334444,manuel@example.org
+Topología,5,Laura,5556666,laura@example.com
+EcuacionesDiferencialesParciales,6,Miguel,7778888,miguel@example.org
+GeometríaRiemanniana,4,Lina,9990000,lina@example.com
