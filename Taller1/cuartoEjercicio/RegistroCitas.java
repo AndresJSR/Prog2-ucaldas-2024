@@ -36,17 +36,17 @@ public class RegistroCitas {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
-                    registrarPaciente(crearPaciente());
-                    listarPacientes();
+                    //registrarPaciente(crearPaciente());
+                    //listarPacientes();
                     break;
                 case 2:
-                    registrarMedico(crearMedico());
-                    listarMedicos();
+                    //registrarMedico(crearMedico());
+                    //listarMedicos();
                     break;
                 case 3:
-                    listarEspecialidades(especialidades);
-                    registrarEspecialidad(crearEspecialidad());
-                    listarEspecialidades(especialidades);
+                    //listarEspecialidades(especialidades);
+                    //registrarEspecialidad(crearEspecialidad());
+                    //listarEspecialidades(especialidades);
                     break;
                 case 4:
                     listarCitas(citas);
@@ -59,34 +59,41 @@ public class RegistroCitas {
                     System.out.println("[2] Busqueda por código del médico");
                     System.out.println("[3] Busqueda por especialidad");
                     System.out.println("[4] Busqueda por fecha de la cita");
-                    System.out.println("[5] Salir");
+                    System.out.println("[5] listar medico en específico por las tardes");
+                    System.out.println("[6] Salir");
                     int resp = sc.nextInt();
                     sc.nextLine();
                     switch (resp) {
                         case 1:
-                            System.out.println("Cedula del paciente");
-                            String nombreFiltro = sc.nextLine();
-                            listarCitas(buscarCita(nombreFiltro));
-                            break;
-                        case 2:
+                            //System.out.println("Cedula del paciente");
+                            //String nombreFiltro = sc.nextLine();
+                            //listarCitas(buscarCita(nombreFiltro));
+                            //break;
+                        case 2://
 
-                            System.out.println("Codigo del medico");
-                            String codigoFiltro = sc.nextLine();
-                            System.out.println(buscarCita(codigoFiltro));
+                            //System.out.println("Codigo del medico");
+                            //String codigoFiltro = sc.nextLine();
+                            //System.out.println(buscarCita(codigoFiltro));
                             break;
                         case 3:
-                            System.out.println("Especialidad");
-                            String especialidadFiltro = sc.nextLine();
-                            System.out.println(buscarCita(especialidadFiltro));
+                            //System.out.println("Especialidad");
+                            //String especialidadFiltro = sc.nextLine();
+                            //System.out.println(buscarCita(especialidadFiltro));
                         case 4:
                             System.out.println("Fecha de la cita");
                             String fechaFiltro = sc.nextLine();
                             System.out.println(buscarCita(fechaFiltro));
                             break;
-                        case 5:
+                            case 5:
+                            
+                            System.out.println("Nombre del medico");
+                            String nombreMedicoFiltro = sc.nextLine();
+                            System.out.println(buscarCita(nombreMedicoFiltro));
+                            listarMedicosTardes();
+                                break;
+                            case 6: 
                             break;
-                    }
-
+                        }
                     break;
             }
         } while (opcion != 6);
@@ -164,7 +171,7 @@ public class RegistroCitas {
         do {
             System.out.println("Ingrese la cédula del paciente ");
             cedulaPaciente = sc.nextLine();
-            
+
             for (int i = 0; i < pacientes.size(); i++) {
                 if (pacientes.get(i).cedulaPaciente.equals(cedulaPaciente)) {
                     System.out.println("Nombre = " + pacientes.get(i).nombrePaciente + " Cedula =  "
@@ -185,14 +192,14 @@ public class RegistroCitas {
         do {
             System.out.println("Ingrese el código del médico");
             codigoMedico = sc.nextLine();
-                for (int i = 0; i < medicos.size(); i++) {
-                    if (medicos.get(i).codigoMedico.equals(codigoMedico)) {
-                        System.out.println("Nombre = " + medicos.get(i).nombreMedico + " Especialidad =  "
-                                + medicos.get(i).especialidad + "Código = " + medicos.get(i).codigoMedico);
-                        existeMedico = true;
-                        medico=medicos.get(i);
-                    }
+            for (int i = 0; i < medicos.size(); i++) {
+                if (medicos.get(i).codigoMedico.equals(codigoMedico)) {
+                    System.out.println("Nombre = " + medicos.get(i).nombreMedico + " Especialidad =  "
+                            + medicos.get(i).especialidad + "Código = " + medicos.get(i).codigoMedico);
+                    existeMedico = true;
+                    medico = medicos.get(i);
                 }
+            }
         } while (!existeMedico);
         Date fechaCita;
         System.out.println("Ingrese el año");
@@ -208,6 +215,23 @@ public class RegistroCitas {
         String estado = "Pendiente";
 
         return new Cita(paciente, medico, fechaCita, horaCita, estado);
+    }
+
+    public static void listarMedicosTardes() {
+        
+        if (!citas.isEmpty()) {
+            System.out.println("Lista de citas");
+            System.out.println("Ingrese el nombre del medico");
+                String medico = sc.nextLine();
+            for (int i = 0; i < citas.size(); i++) {
+                if(citas.get(i).getMedico().getNombreMedico().equals(medico)){
+                medico=citas.get(i).getMedico().getNombreMedico();
+                System.out.println(medico);
+                }
+            }
+        } else {
+            System.out.println("No existen medicos en la lista");
+        }
     }
 
     public static void listarPacientes() {
@@ -268,6 +292,15 @@ public class RegistroCitas {
             }
         }
         return filtrocita;
+    }
+    public static ArrayList<Medico> buscarMedico(String filtro) {
+        ArrayList<Medico> medicosFiltro = new ArrayList<>();
+        for (Medico med : medicos) {
+            if ((med.getNombreMedico()).equals(filtro)) {
+                medicosFiltro.add(med);
+            }
+        }
+        return medicosFiltro;
     }
 
     private static void leer_lista_Pacientes() {

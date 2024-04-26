@@ -49,9 +49,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        String caracteristicasProducto = "Producto [nombreProducto=" + nombreProducto + ", categoria=" + categoria
-                + ", precio=" + precio
-                + ", stock=" + stock + "]";
+        String caracteristicasProducto = "Producto [nombreProducto=" + nombreProducto+ "]";
         return caracteristicasProducto;
     }
 
