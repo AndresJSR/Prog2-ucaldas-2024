@@ -35,29 +35,31 @@ public class RegistroInventario {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
-                    registrarProducto(crearProducto());
-                    listarProductos();
+                    //registrarProducto(crearProducto());
+                    //listarProductos();
                     break;
                 case 2:
-                    listarCategorias();
-                    registrarCategoria(crearCategoria());
+                    //listarCategorias();
+                    //registrarCategoria(crearCategoria());
 
                     break;
                 case 3:
-                    listarProveedores();
-                    registrarProveedores(crearProveedor());
-                    listarProveedores();
+                    //listarProveedores();
+                    //registrarProveedores(crearProveedor());
+                    //listarProveedores();
                     break;
                 case 4:
-                    registrarVenta(crearVenta());
-                    listarVentas();
+                    //registrarVenta(crearVenta());
+                    //listarVentas();
                     break;
                 case 5:
                     System.out.println("Seleccione una opción de busqueda");
                     System.out.println("[1] Busqueda por nombre del producto");
                     System.out.println("[2] Busqueda por categoría del producto");
                     System.out.println("[3] Busqueda por precio del producto");
-                    System.out.println("[4] Salir");
+                    System.out.println("[4] listar producto de menor stock");
+                    System.out.println("[5] Salir");
+
                     int resp = sc.nextInt();
                     switch (resp) {
                         case 1:
@@ -76,6 +78,11 @@ public class RegistroInventario {
                             System.out.println(buscarProductos(precioFiltro));
                             break;
                         case 4:
+                            listarProductosMenorStock();
+
+                            break;
+
+                            case 5:
 
                             break;
 
@@ -235,8 +242,8 @@ public class RegistroInventario {
             System.out.println("No existen productos en la lista");
         }
     }
-
-    public static ArrayList<Producto> buscarProductos(String filtro) {
+    
+    public static ArrayList<Producto> buscarProductos (String filtro) {
         ArrayList<Producto> filtroProducto = new ArrayList<>();
         for (Producto prod : productos) {
             if (prod.getNombreProducto().equals(filtro) || String.valueOf(prod.getPrecio()).equals(filtro)
@@ -245,6 +252,31 @@ public class RegistroInventario {
             }
         }
         return filtroProducto;
+    }
+    public static ArrayList<Producto> buscarstock (int filtroStock) {
+        ArrayList<Producto> filtroProducto = new ArrayList<>();
+        for (Producto prod : productos) {
+            if (prod.getStock()==filtroStock) {
+                filtroProducto.add(prod);
+            }
+        }
+        return filtroProducto;
+    }
+    public static void listarProductosMenorStock() {
+        if (!productos.isEmpty()) {
+            System.out.println("Productos de la lista");
+            int menor = productos.get(0).getStock();
+            for (int i =0 ; i<productos.size(); i++) {
+                if (menor <productos.get(i).getStock()) {
+                } else {
+                    menor = productos.get(i).getStock();
+                }
+                System.out.println("El producto de menor stock es ");
+                System.out.println(buscarstock(menor));
+             }
+        } else {
+            System.out.println("No existen productos en la lista");
+        }
     }
 
     private static void leer_archivo() {
